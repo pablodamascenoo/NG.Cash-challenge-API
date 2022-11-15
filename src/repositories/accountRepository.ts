@@ -8,7 +8,18 @@ async function createAccount() {
   return account;
 }
 
+async function getById(id: number) {
+  const account = await prisma.account.findFirst({
+    where: {
+      id,
+    },
+  });
+
+  return account;
+}
+
 const accountRepository = {
+  getById,
   createAccount,
 };
 
