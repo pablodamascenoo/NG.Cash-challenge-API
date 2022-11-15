@@ -19,7 +19,7 @@ export default async function verifyToken(
 
     const user = await prisma.user.findFirst({
       where: {
-        id: data.id,
+        username: data.username,
       },
     });
 
