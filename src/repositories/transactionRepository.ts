@@ -50,6 +50,28 @@ async function getTransactions(userId: number, date: string, type: string) {
 
   const transactions = await prisma.transaction.findMany({
     where: filters.where,
+    select: {
+      creditedAccount: {
+        select: {
+          User: {
+            select: {
+              username: true,
+            },
+          },
+        },
+      },
+      debitedAccount: {
+        select: {
+          User: {
+            select: {
+              username: true,
+            },
+          },
+        },
+      },
+      value: true,
+      createdAt: true,
+    },
   });
 
   return transactions;
