@@ -13,8 +13,8 @@ async function signIn(req: Request, res: Response) {
   const { username, password }: { username: string; password: string } =
     req.body;
 
-  const token = await authService.signIn({ username, password });
-  return res.send({ token });
+  const data = await authService.signIn({ username, password });
+  return res.send(data);
 }
 
 const authController = {

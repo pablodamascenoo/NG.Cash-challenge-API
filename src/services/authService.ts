@@ -24,7 +24,7 @@ async function signIn(data: UserSchemaSignIn) {
 
   comparePassword(data.password, foundUser.password);
   const token = genToken(data.username);
-  return token;
+  return { username: data.username, token };
 }
 
 function cryptPassword(password: string) {
