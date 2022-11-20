@@ -38,6 +38,25 @@ $ npm run prisma:generate
 $ npm run dev
 ```
 
+## Testes:
+
+### Sem Docker:
+
+- Para rodar os testes sem docker, basta executar as seguintes linhas de comando:
+
+```bash
+$ npm i
+$ npm run test
+```
+
+### Com Docker:
+
+- Para rodar os testes com o Docker, basta executa a seguinte linha
+
+```bash
+$ npm run test:docker
+```
+
 ## Rotas:
 
 ```

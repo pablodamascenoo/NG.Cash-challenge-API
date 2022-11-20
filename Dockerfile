@@ -7,5 +7,6 @@ COPY . .
 RUN npm i
 RUN npm run prisma:generate
 RUN npm run build
+COPY . .
 
-CMD ["npm", "start"]
+CMD [ "npm", "start" ]
